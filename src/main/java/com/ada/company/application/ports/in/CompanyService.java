@@ -6,8 +6,8 @@ import java.util.List;
 
 public interface CompanyService {
     List<CompanyDto> getAllCompanies();
-    CompanyDto getCompanyById(int id) throws Exception;
+    CompanyDto getCompanyById(Long idCompany) throws Exception;
     CompanyDto createCompany(CompanyDto company) throws Exception;
-    CompanyDto updateCompany(int id, CompanyDto company) throws Exception;
-    void deleteCompany(int id) throws Exception;
+    CompanyDto updateCompany(Long idCompany, CompanyDto company) throws Exception;
+    void deleteCompany(Long idCompany) throws Exception;
 }

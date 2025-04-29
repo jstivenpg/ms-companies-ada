@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface CompanyRepository {
     List<Company> findAll();
-    Company findById(int id);
+    Company findById(Long idCompany);
     Company save(Company company);
-    void delete(int companyId);
+    void delete(Long idCompany);
 }

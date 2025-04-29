@@ -35,7 +35,7 @@ public class CompanyController {
     })
     @GetMapping("/{companyId}")
     @ResponseStatus(HttpStatus.OK)
-    public CompanyDto getCompanyById(@PathVariable int companyId) throws Exception {
+    public CompanyDto getCompanyById(@PathVariable Long companyId) throws Exception {
         return companyService.getCompanyById(companyId);
     }
 
@@ -55,7 +55,7 @@ public class CompanyController {
     })
     @PutMapping("/{companyId}")
     @ResponseStatus(HttpStatus.OK)
-    public CompanyDto updateCompany(@PathVariable int companyId, CompanyDto companyDto) throws Exception {
+    public CompanyDto updateCompany(@PathVariable Long companyId, CompanyDto companyDto) throws Exception {
         return companyService.updateCompany(companyId, companyDto);
     }
 
@@ -65,7 +65,7 @@ public class CompanyController {
     })
     @DeleteMapping("/{companyId}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void delete(@PathVariable int companyId) throws Exception {
+    public void delete(@PathVariable Long companyId) throws Exception {
         companyService.deleteCompany(companyId);
     }
 }

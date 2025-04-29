@@ -24,7 +24,7 @@ public class CompanyUseCase implements CompanyService {
     }
 
     @Override
-    public CompanyDto getCompanyById(int id) throws Exception {
+    public CompanyDto getCompanyById(Long id) throws Exception {
         Company companyEntity = companyRepository.findById(id);
         if( companyEntity == null) {
             throw new Exception(String.valueOf(ResponseCode.COMPANY_NOT_FOUND));
@@ -39,9 +39,9 @@ public class CompanyUseCase implements CompanyService {
     }
 
     @Override
-    public CompanyDto updateCompany(int id, CompanyDto company) throws Exception {
-        Company companyEntity = companyRepository.findById(id);
-        companyEntity.setIdCompany(id);
+    public CompanyDto updateCompany(Long idCompany, CompanyDto company) throws Exception {
+        Company companyEntity = companyRepository.findById(idCompany);
+        companyEntity.setIdCompany(idCompany);
         companyEntity.setCodeCompany(company.codeCompany());
         companyEntity.setCompanyName(company.companyName());
         companyEntity.setDescriptionCompany(company.descriptionCompany());
@@ -49,7 +49,7 @@ public class CompanyUseCase implements CompanyService {
     }
 
     @Override
-    public void deleteCompany(int idCompany) throws Exception {
+    public void deleteCompany(Long idCompany) throws Exception {
         try {
             companyRepository.delete(idCompany);
         } catch ( Exception e ) {

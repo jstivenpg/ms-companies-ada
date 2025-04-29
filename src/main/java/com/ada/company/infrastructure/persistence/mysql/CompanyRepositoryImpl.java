@@ -23,8 +23,8 @@ public class CompanyRepositoryImpl implements CompanyRepository {
     }
 
     @Override
-    public Company findById(int id) {
-        CompanyModel companyModel = companyJpa.findById(id).orElse(null);
+    public Company findById(Long idCompany) {
+        CompanyModel companyModel = companyJpa.findById(idCompany).orElse(null);
         return companyMapper.companyModelToCompany(companyModel);
     }
 
@@ -36,8 +36,8 @@ public class CompanyRepositoryImpl implements CompanyRepository {
     }
 
     @Override
-    public void delete(int companyId) {
-        companyJpa.deleteById(companyId);
+    public void delete(Long idCompany) {
+        companyJpa.deleteById(idCompany);
 
     }
 }

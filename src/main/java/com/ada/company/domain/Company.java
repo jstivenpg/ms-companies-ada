@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Company {
 
-    private int idCompany;
+    private Long idCompany;
     private String codeCompany;
     private String companyName;
     private String descriptionCompany;
@@ -38,11 +38,11 @@ public class Company {
         this.descriptionCompany = descriptionCompany;
     }
 
-    public int getIdCompany() {
+    public Long getIdCompany() {
         return idCompany;
     }
 
-    public void setIdCompany(int idCompany) {
+    public void setIdCompany(Long idCompany) {
         this.idCompany = idCompany;
     }
 }
